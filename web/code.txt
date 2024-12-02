@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOMESC</title>
+  <link rel="stylesheet" href="HOMESC style.css">
+  <script src="scrip.js"></script>
+
+</head>
+<body>
+  <div id="homesc" class="homesc">
+    <div id="temahomesc" class="temahomesc"></div>
+    <div id="garisoption" class="garisoption">
+        <div class="menu">
+            <button class="menu-item menu-item-1">BRANDA</button>
+            <button class="menu-item menu-item-2">PROPERTI</button>
+            <button class="menu-item menu-item-3">PROJEK</button>
+            <button class="menu-item menu-item-4">KATEGORI</button>
+            <button class="menu-item menu-item-5">KONTAK US</button>
+        </div>
+    </div>
+    <img id="vector" class="vector" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAWCAYAAAA1vze2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAuSURBVHgB7dNBDQAACMNAwL/BqQEVkIXtDPTVBNCxrOLAn4iJSs9IFzFRnpEvMsKBCrQNFsryAAAAAElFTkSuQmCC" />
+  </div>
+
+  <!-- Peringatan Rotasi -->
+  <div id="rotate-warning" class="rotate-warning">
+    <p>Silakan rotasi perangkat Anda ke mode landscape untuk melihat konten ini.</p>
+  </div>
+
+
+      <!-- Daftar Barang -->
+      <div class="container">
+        <div class="item">Barang 1</div>
+        <div class="item">Barang 2</div>
+        <div class="item">Barang 3</div>
+        <div class="item">Barang 4</div>
+        <div class="item">Barang 5</div>
+        <div class="item">Barang 6</div>
+        <div class="item">Barang 7</div>
+        <div class="item">Barang 8</div>
+        <div class="item">Barang 9</div>
+        <div class="item">Barang 10</div>
+        <div class="item">Barang 11</div>
+        <div class="item">Barang 12</div>
+        <div class="item">Barang 13</div>
+        <div class="item">Barang 14</div>
+        <div class="item">Barang 15</div>
+        <div class="item">Barang 16</div>
+        <div class="item">Barang 17</div>
+        <div class="item">Barang 18</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.homesc {
+    position: relative;
+    background-color: #141414;
+    min-height: 720px;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.temahomesc {
+    background-color: transparent;
+    height: 720px;
+    width: 1280px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.garisoption {
+    background-color: #acacac;
+    height: 10px;
+    width: 1280px;
+    position: absolute;
+    top: 240px;
+    left: 0px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: -50px; /* Awalnya tombol tersembunyi */
+    width: 100%;
+}
+
+.menu-item {
+    font-family: Inter, sans-serif;
+    font-size: 35px;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0; /* Memulai dengan tidak terlihat */
+    transform: translateY(20px); /* Memulai dari bawah */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: fadeInUp 0.5s forwards; /* Animasi untuk muncul */
+}
+
+.menu-item-1 {
+    animation-delay: 0.1s; /* Delay untuk animasi BRANDA */
+}
+
+.menu-item-2 {
+    animation-delay: 0.2s; /* Delay untuk animasi PROPERTI */
+}
+
+.menu-item-3 {
+    animation-delay: 0.3s; /* Delay untuk animasi PROJEK */
+}
+
+.menu-item-4 {
+    animation-delay: 0.4s; /* Delay untuk animasi KATEGORI */
+}
+
+.menu-item-5 {
+    animation-delay: 0.5s; /* Delay untuk animasi KONTAK US */
+}
+
+/* Animasi untuk efek muncul */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Mulai dari bawah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Muncul ke posisi semula */
+    }
+}
+
+/* Efek hover pada tombol */
+.menu-item:hover {
+    background-color: rgba(0, 161, 8, 0.616); /* Efek transparan */
+    border-color: #00ff0d;
+}
+
+/* Tombol tetap terlihat setelah animasi */
+.garisoption:hover .menu .menu-item {
+    opacity: 1; /* Pastikan tombol tetap terlihat */
+    transform: translateY(0); /* Memastikan tombol tetap di tempatnya */
+}
+
+.vector {
+    background-color: #080808;
+    height: 22px;
+    width: 25px;
+    position: absolute;
+    left: 1221px;
+    top: 34px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vector:hover {
+    transform: scale(1.2);
+    background-color: #0534ceea;
+    border-radius: 5px;
+}
+
+.rotate-warning {
+    display: none; /* Default tersembunyi */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+/* Media Query untuk Portrait Mode */
+@media (orientation: portrait) {
+    .homesc {
+        display: none; /* Sembunyikan konten utama */
+    }
+    .rotate-warning {
+        display: block; /* Tampilkan pesan peringatan */
+    }
+}
+
+
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    width: 1200px; /* Dikurangi untuk memberikan margin */
+    position: absolute;
+    top: 300px; /* Sesuaikan dengan posisi di bawah menu */
+    left: 50%; /* Posisi horizontal di tengah */
+    transform: translateX(-50%); /* Membuat container benar-benar di tengah */
+    margin: 0 auto; /* Memastikan centering */
+}
+
+.item {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 15px; /* Padding dikurangi sedikit */
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function checkOrientation() {
+  const homesc = document.getElementById('homesc');
+  const warning = document.getElementById('rotate-warning');
+  
+  if (window.innerWidth < window.innerHeight) {
+      // Jika orientasi portrait
+      homesc.style.display = 'none';
+      warning.style.display = 'block';
+  } else {
+      // Jika orientasi landscape
+      homesc.style.display = 'block';
+      warning.style.display = 'none';
+  }
+}
+
+// Jalankan pemeriksaan saat halaman dimuat
+window.addEventListener('load', checkOrientation);
+
+// Jalankan pemeriksaan saat layar dirotasi
+window.addEventListener('resize', checkOrientation);
+
+
+

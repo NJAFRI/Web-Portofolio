@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    overflow: auto; /* Izinkan penggulungan */
+}
+
+.homesc 
+{
+    position: relative;
+    background-color: #000000;
+    min-height: 720px;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: auto; /* Izinkan penggulungan pada konten */
+}
+
+
+
+
+.temahomesc 
+{
+    background-color: transparent;
+    height: 720px;
+    width: 1280px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+
+/* Untuk layar kecil */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Susun menu secara vertikal */
+        align-items: center; /* Rata tengah */
+        gap: 10px; /* Tambahkan jarak antar item */
+    }
+
+    .menu-item {
+        font-size: 16px; /* Sesuaikan ukuran font */
+        padding: 8px 15px; /* Sesuaikan padding */
+        margin-bottom: 10px; /* Beri jarak antar tombol */
+    }
+
+    .vector {
+        display: none; /* Sembunyikan ikon vektor di layar kecil */
+    }
+
+    .garisoption {
+        height: 5px; /* Kurangi tinggi */
+    }
+}
+
+/* Untuk layar sangat kecil (mobile portrait) */
+@media (max-width: 480px) {
+    .menu-item {
+        font-size: 14px; /* Font lebih kecil */
+        padding: 5px 10px; /* Padding lebih kecil */
+    }
+
+    .rectangle-btn {
+        height: 120px; /* Kurangi tinggi tombol properti */
+    }
+
+    .garisoption {
+        height: 3px; /* Kurangi lagi tinggi */
+    }
+}
+
+
+
+
+.garisoption {
+    position: relative;
+    top: 115px;
+    background-color: #d9d9d9;
+    height: 10px;
+    margin-bottom: 20px;
+}
+
+.menu {
+    position: relative;
+    top: 70px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 26px 0;
+}
+
+.menu-item {
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-item:hover {
+    background-color: rgb(228, 0, 0);
+    transform: scale(1.05);
+}
+
+
+/* Animasi untuk efek muncul */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* Memulai dari ukuran kecil */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Kembali ke ukuran normal */
+    }
+}
+
+/* Efek hover pada tombol */
+.menu-item {
+    font-family: Inter, sans-serif;
+    font-size: 35px;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.8); /* Awalnya kecil */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: zoomIn 0.5s forwards; /* Gunakan animasi baru */
+}
+
+/* Tombol tetap terlihat setelah animasi */
+.garisoption:hover .menu .menu-item {
+    opacity: 1; /* Pastikan tombol tetap terlihat */
+    transform: translateY(0); /* Memastikan tombol tetap di tempatnya */
+}
+
+#vector {
+    position: relative;
+    top: -97px; /* Posisi vertikal tetap */
+    right: -1215px; /* Mengatur jarak dari kanan */
+    left: auto; /* Pastikan properti 'left' dinonaktifkan */
+    background-color: #080808;
+    height: 22px;
+    width: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#vector:hover {
+    transform: scale(1.2);
+    background-color: #0534ceea;
+    border-radius: 5px;
+}
+
+
+.rotate-warning 
+{
+    display: none; /* Default tersembunyi */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+/* Media Query untuk Portrait Mode */
+@media (orientation: portrait) 
+{
+    .homesc {
+        display: none; /* Sembunyikan konten utama */
+    }
+    .rotate-warning {
+        display: block; /* Tampilkan pesan peringatan */
+    }
+}
+
+
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    width: 1200px; /* Dikurangi untuk memberikan margin */
+    position: absolute;
+    top: 300px; /* Sesuaikan dengan posisi di bawah menu */
+    left: 50%; /* Posisi horizontal di tengah */
+    transform: translateX(-50%); /* Membuat container benar-benar di tengah */
+    margin: 0 auto; /* Memastikan centering */
+}
+
+.item {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 15px; /* Padding dikurangi sedikit */
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.separator {
+    margin-top: 10px; /* Tambahkan margin atas untuk memberi jarak dari menu */
+}
