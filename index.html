@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio</title>
     <style>
+   
+       @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        display: none; /* Sembunyikan menu jika terlalu kecil */
+    }
+    .hamburger-menu {
+        display: block; /* Tampilkan menu alternatif */
+    }
+}
+ 
+        
+        
         /* Reset dasar */
 * {
     margin: 0;
@@ -12,6 +35,9 @@
     box-sizing: border-box;
 }
 
+
+
+        
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, #e5fd07, #ADD8E6); 
